@@ -19,4 +19,5 @@ Route::get('/callback', 'AuthController@callback');
 Route::get('/signout', 'AuthController@signout');
 Route::get('/calendar', 'CalendarController@calendar');
 Route::get('/dashboard', 'TeamsDashboardController@dashboard');
+Route::get('/groups', 'GroupsController@groups');
 
