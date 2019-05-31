@@ -35,6 +35,9 @@
               <li class="nav-item" data-turbolinks="false">
                 <a href="/dashboard" class="nav-link{{$_SERVER['REQUEST_URI'] == '/dashboard' ? ' active' : ''}}">Dashboard</a>
               </li>
+              <li class="nav-item" data-turbolinks="false">
+                <a href="/group" class="nav-link{{$_SERVER['REQUEST_URI'] == '/group' ? ' active' : ''}}">Groups</a>
+              </li>
             @endif
           </ul>
           <ul class="navbar-nav justify-content-end">
@@ -79,7 +82,8 @@
         </div>
       @endif
 
-      @yield('content')
+
+       @yield('content')
     </main>
   </body>
 </html>
