@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>ATMC TEAMS</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -13,7 +14,11 @@
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
+    
+      </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -29,15 +34,16 @@
               <a href="/" class="nav-link {{$_SERVER['REQUEST_URI'] == '/' ? ' active' : ''}}">Home</a>
             </li>
             @if(isset($userName))
-              <li class="nav-item" data-turbolinks="false">
+          <!--    <li class="nav-item" data-turbolinks="false">
                 <a href="/calendar" class="nav-link{{$_SERVER['REQUEST_URI'] == '/calendar' ? ' active' : ''}}">Calendar</a>
-              </li>
+              </li> -->
               <li class="nav-item" data-turbolinks="false">
-                <a href="/dashboard" class="nav-link{{$_SERVER['REQUEST_URI'] == '/dashboard' ? ' active' : ''}}">Dashboard</a>
+                <a href="/users" class="nav-link{{$_SERVER['REQUEST_URI'] == '/users' ? ' active' : ''}}">Users</a>
               </li>
               <li class="nav-item" data-turbolinks="false">
                 <a href="/group" class="nav-link{{$_SERVER['REQUEST_URI'] == '/group' ? ' active' : ''}}">Groups</a>
               </li>
+             
             @endif
           </ul>
           <ul class="navbar-nav justify-content-end">

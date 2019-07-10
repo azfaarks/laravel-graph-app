@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="jumbotron">
-  <h1>ATMC - TEAMS</h1>
-  <p class="lead">This sample app shows how to use the Microsoft Graph API to access Outlook and OneDrive data from PHP</p>
+  <h1>ATMC - MS Team Manager</h1>
+  <p class="lead">This app helps to manage Microsoft Teams</p>
   @if(isset($userName))
     <h4>Welcome {{ $userName }}!</h4>
     <p>Use the navigation bar at the top of the page to get started.</p>

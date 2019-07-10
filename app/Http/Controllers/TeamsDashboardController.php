@@ -7,15 +7,19 @@ use Microsoft\Graph\Model;
 use App\TokenStore\TokenCache;
 class TeamsDashboardController extends Controller
 {
+  public $accessToken;
+  public $url  = "https://graph.microsoft.com/beta/teams";
+
+
   public function dashboard()
   {
     $viewData = $this->loadViewData();
     // Get the access token from the cache
     $tokenCache = new TokenCache();
-    $accessToken = $tokenCache->getAccessToken();
+    $this->accessToken = $tokenCache->getAccessToken();
     // Create a Graph client
     $graph = new Graph();
-    $graph->setAccessToken($accessToken);
+    $graph->setAccessToken($this->accessToken);
    
     // Retrieving User Joined Groups
    $data  =  $this->getUserJoinedTeams($viewData,$graph);
@@ -23,6 +27,7 @@ class TeamsDashboardController extends Controller
     
     }
 
+    
 
    function getUserJoinedTeams($viewData,$graph)
    {

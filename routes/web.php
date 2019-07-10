@@ -21,3 +21,14 @@ Route::get('/calendar', 'CalendarController@calendar');
 Route::get('/dashboard', 'TeamsDashboardController@dashboard');
 Route::get('/group', 'GroupController@group');
 Route::post('/group', 'GroupController@createNewGroup');
+ 
+Route::post('/dashboard', 'GroupController@displaySearchGroup');
+Route::post('/createBulkGroup', 'GroupController@createNewBulkGroup');
+
+Route::get('/users', 'UserController@user');
+Route::get('/joinedTeams', 'UserController@getUserJoinedTeams');
+Route::post('/updateGroup', 'UserController@addBulkMembersToGroup');
+Route::post('/users', 'UserController@addMembersToGroup');
+
+
+
